@@ -20,12 +20,12 @@ class GoogleScraper:
                 writer.writerow(['Title', 'Content', 'Link', 'Media'])  # CSV header
             writer.writerows([(result['title'], result['content'], result['link'], "") for result in self.search_results])  # Adding empty media
 
-    def scrape(self, query: str, email: str, platform: str) -> list:
+    def scrape(self, query: str) -> list:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
         }
 
-        search_url = f"https://www.google.com/search?q={query.replace(' ', '+'), 'email:', email, 'site:', platform}"
+        search_url = f"https://www.google.com/search?q={query.replace(' ', '+')}"
         print(search_url)
         try:
             response = requests.get(search_url, proxies=self.proxies, headers=headers)
