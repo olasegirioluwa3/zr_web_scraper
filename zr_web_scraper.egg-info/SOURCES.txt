@@ -1,5 +1,7 @@
 README.md
 setup.py
+zr_amazon_scraper/__init__.py
+zr_amazon_scraper/scraper.py
 zr_google_scraper/__init__.py
 zr_google_scraper/scraper.py
 zr_web_scraper.egg-info/PKG-INFO
